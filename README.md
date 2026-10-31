@@ -1,86 +1,30 @@
-# Focus-Lock-Extensions
-A lightweight Firefox browser extension that helps you stay focused by locking your current tab and automatically returning you to it whenever you attempt to open or switch tabs.
+# Focus Lock for Firefox
 
-# 🔒 Focus Lock for Firefox
+A lightweight Firefox extension that helps reduce tab-switching distractions by returning you to a chosen focus tab.
 
-A lightweight productivity-focused Firefox extension designed to eliminate distractions by locking your browser to a single tab.
+## Features
+- Lock the currently active tab with one click.
+- Return to the locked tab when another tab is activated.
+- Close newly created tabs and return to the focus tab.
+- Store lock state locally.
 
-## 📌 Overview
+## Install for testing
+1. Download or clone this repository.
+2. Open Firefox and visit `about:debugging`.
+3. Select **This Firefox**.
+4. Click **Load Temporary Add-on…**.
+5. Select this project's `manifest.json`.
 
-Have you ever opened a new tab while studying, only to find yourself browsing unrelated websites?
+Temporary add-ons are removed when Firefox restarts. For public distribution, submit the packaged extension to Mozilla Add-ons (AMO) for signing/review.
 
-Focus Lock helps solve this problem.
+## Project files
+- `manifest.json` — extension metadata, permissions, icon references.
+- `background.js` — tab monitoring and focus-lock behavior.
+- `popup.html`, `popup.css`, `popup.js` — toolbar popup.
+- `icons/` — extension icons.
 
-With a single click, you can lock your current Firefox tab. Whenever you attempt to open a new tab or switch to another tab, the extension automatically returns you to your selected focus tab.
+## Limitations
+Firefox does not let extensions disable its native new-tab button. A newly opened tab may appear briefly before the extension closes it and returns to the locked tab. This is a productivity aid, not a tamper-proof kiosk lock.
 
-## ✨ Features
-
-- **One-click focus mode** — Lock your current tab instantly.
-- **Automatic tab redirection** — Return to the locked tab when opening new tabs.
-- **Tab switching prevention** — Automatically return to the focus tab when another tab is activated.
-- **Simple interface** — Minimal popup with lock and unlock controls.
-- **Persistent state** — Stores the focus lock state locally.
-- **Lightweight** — Built using Firefox WebExtensions APIs.
-
-## 🛠️ Built With
-
-- JavaScript
-- HTML5
-- CSS3
-- Firefox WebExtensions API
-- Browser Tabs API
-- Browser Storage API
-
-## 🚀 Installation
-
-### Temporary Installation
-
-1. Clone or download this repository.
-2. Extract the project files.
-3. Open Firefox.
-4. Navigate to `about:debugging`.
-5. Select **This Firefox**.
-6. Click **Load Temporary Add-on...**.
-7. Select the `manifest.json` file from the project directory.
-
-The extension will now appear under Temporary Extensions.
-
-### Using Focus Lock
-
-1. Open the tab you want to focus on.
-2. Click the Focus Lock extension icon.
-3. Select **Lock this tab**.
-4. Continue working without distractions.
-5. Select **Unlock browsing** to return to normal browsing.
-
-## 📂 Project Structure
-
-```text
-focus-lock-firefox/
-├── manifest.json
-├── background.js
-├── popup.html
-├── popup.css
-├── popup.js
-├── README.md
-└── LICENSE
-```
-
-## ⚠️ Limitations
-
-- Firefox does not allow extensions to directly disable its native new-tab button.
-- Newly opened tabs may briefly appear before being closed.
-- Temporary extension installations are removed when Firefox restarts.
-- Focus Lock is a productivity aid and is not intended as a tamper-proof kiosk mode.
-
-## 🔮 Future Improvements
-
-- Focus timer with customizable sessions.
-- Automatic unlocking after a scheduled break.
-- Distraction attempt counter.
-- Persistent installation through Mozilla signing.
-- Improved focus-session statistics.
-
-## 📄 License
-
-This project is licensed under the MIT License.
+## License
+MIT. See `LICENSE`.

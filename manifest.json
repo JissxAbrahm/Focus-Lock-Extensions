@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "Focus Lock",
+  "version": "1.0.0",
+  "description": "Lock Firefox to one tab and return to it when new tabs are opened.",
+  "icons": {
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png",
+    "128": "icons/icon-128.png"
+  },
+  "permissions": ["tabs", "storage"],
+  "browser_action": {
+    "default_title": "Focus Lock",
+    "default_icon": {
+      "16": "icons/icon-48.png",
+      "32": "icons/icon-96.png"
+    },
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "focus-lock@example.local"
+    }
+  }
+}
